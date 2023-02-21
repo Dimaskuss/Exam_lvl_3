@@ -19,8 +19,8 @@ public class ExamController {
     private final ExaminerService examinerService;
 
     @GetMapping
-    public ResponseEntity<Collection<Question>> getQuestions(int amount){
-        if(examinerService.getQuestions(amount)!=null){
+    public ResponseEntity<Collection<Question>> getQuestions(int amount) {
+        if (examinerService.getQuestions(amount) != null) {
             return ResponseEntity.ok(examinerService.getQuestions(amount));
         }
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
